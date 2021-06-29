@@ -1,0 +1,24 @@
+# DOCKER-COMPOSE FILE
+# MICHAEL JARNLING
+version: "3.7"
+
+services:
+    flask:
+        image: flaskapp
+        ports:
+                - 8080:5000
+        depends_on:
+            - redis
+        working_dir: /app
+    redis:
+        image: redis # redis:6.2.4 or redis:6.2.4-alpine
+        ports:
+            - 6379
+        working_dir: /data
+        volumes:
+            - type: volume
+              source: redis-data
+              target: /data
+volumes:
+    redis-data:
+        
