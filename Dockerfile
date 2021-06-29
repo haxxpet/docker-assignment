@@ -19,8 +19,5 @@ EXPOSE 5000
 # Set env variable
 ENV FLASK_APP=/app/app.py
 
-# Set the entrypoint
-#ENTRYPOINT ["python3"]
-
 # Run the application
 CMD flask run --host=0.0.0.0 --port=5000
